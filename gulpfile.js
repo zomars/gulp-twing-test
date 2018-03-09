@@ -8,7 +8,7 @@ const env = new Twing.TwingEnvironment(loader, {
 });
 
 gulp.task('templates', () => {
-  return gulp.src('src/templates/**/*.twig')
+  return gulp.src('src/templates/*.twig')
     .pipe(gulpTwing(env, {foo: 'bar'}))
     .pipe(gulp.dest('dist'));
 });
