@@ -1,13 +1,11 @@
-{% extends 'partials/_master.twig' %}
+{% extends '@Partials/_master.twig' %}
 
 {% block main %}
-
     {% if record is defined %}
-
         <h1>{{ record.title }}</h1>
 
         {# Remove this block if you don't need it anymore. #}
-        {{ include('partials/_fresh_install.twig') }}
+        {{ include('@Partials/_fresh_install.twig') }}
 
         {{ record.teaser }}
 
@@ -15,7 +13,7 @@
 
         {{ record.body }}
 
-        {{ include('partials/_recordfooter.twig', { 'record': record }) }}
+        {{ include('@Partials/_recordfooter.twig', { 'record': record }) }}
 
     {% endif %}
 
