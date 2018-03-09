@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const gulpTwing = require('gulp-twing');
 const Twing = require('twing');
 
-const loader = new Twing.TwingLoaderFilesystem('src');
+const loader = new Twing.TwingLoaderFilesystem('./src/templates');
 const env = new Twing.TwingEnvironment(loader, {
     debug: true
 });
