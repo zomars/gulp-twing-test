@@ -14,16 +14,16 @@
 
         {% block body %}
 
-            {{ include('partials/_header.twig') }}
+            {{ include('@Partials/_header.twig') }}
 
             {% block main %}
             {% endblock main %}
 
-            {{ include('partials/_aside.twig') }}
+            {{ include('@Partials/_aside.twig') }}
 
         {% endblock body %}
 
-        {{ include('partials/_footer.twig') }}
+        {{ include('@Partials/_footer.twig') }}
 
     </body>
 </html>
