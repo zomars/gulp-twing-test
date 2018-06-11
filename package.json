@@ -8,8 +8,8 @@
   "private": false,
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-twing": "^1.0.0",
     "gulp-debug": "^4.0.0",
+    "gulp-twing": "github:zomars/gulp-twing#fix-autoreload",
     "plugin-error": "^1.0.1",
     "twing": "^1.2.1"
   }
