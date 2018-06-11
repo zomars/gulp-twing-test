@@ -1,18 +1,23 @@
-const gulp = require('gulp');
-const gulpTwing = require('gulp-twing');
-const Twing = require('twing');
+const gulp = require('gulp')
+const gulpTwing = require('gulp-twing')
 
-const loader = new Twing.TwingLoaderFilesystem('./src/templates');
-const env = new Twing.TwingEnvironment(loader, {
-    debug: true
-});
+// Custom modules
+const renderTwigOptions = {
+  templatePaths: ['.', './src/templates', './src/pages']
+}
 
-gulp.task('templates', () => {
-  return gulp.src('src/templates/*.twig')
-    .pipe(gulpTwing(env, {foo: 'bar'}))
-    .pipe(gulp.dest('dist'));
-});
+gulp.task('pages', () => {
+  return gulp
+    .src('src/pages/**/*.twig')
+    .pipe(gulpTwing(undefined, renderTwigOptions))
+    .pipe(gulp.dest('./dist'))
+})
 
-gulp.task('default', () => {
-  gulp.watch('src/templates/**/*.twig', ['templates'])
-});
+// Watch for file changes
+gulp.task('watch', () => {
+  // Watch site generators
+  gulp.watch(['pages/**/*.twig','templates/**/*.twig'], { cwd: './src' }, ['pages'])
+})
+
+// Slow watch tasks
+gulp.task('default', ['watch'])
