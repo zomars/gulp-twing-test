@@ -9,6 +9,8 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-twing": "^1.0.0",
-    "twing": "^0.9.0"
+    "gulp-debug": "^4.0.0",
+    "plugin-error": "^1.0.1",
+    "twing": "^1.2.1"
   }
 }
